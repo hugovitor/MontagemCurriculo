@@ -56,15 +56,22 @@ namespace MontagemCurriculo
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
+            using (var escopo = app.ApplicationServices.GetRequiredService<IServiceProvider>().CreateScope())
             {
-                app.UseDeveloperExceptionPage();
+                var contexto = escopo.ServiceProvider.GetRequiredService<Contexto>();
+                contexto.Database.EnsureCreated();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
-            }
+
+
+                if (env.IsDevelopment())
+                {
+                    app.UseDeveloperExceptionPage();
+                }
+                else
+                {
+                    app.UseExceptionHandler("/Home/Error");
+                    app.UseHsts();
+                }
 
             app.UseAuthentication();
             app.UseSession();
