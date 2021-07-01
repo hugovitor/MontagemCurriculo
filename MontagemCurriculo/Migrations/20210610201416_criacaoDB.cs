@@ -157,7 +157,7 @@ namespace MontagemCurriculo.Migrations
                 {
                     ObjetivoId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Descrição = table.Column<string>(maxLength: 1000, nullable: false),
+                    Descricao = table.Column<string>(maxLength: 1000, nullable: false),
                     CurriculoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
