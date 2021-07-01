@@ -14,7 +14,7 @@ namespace MontagemCurriculo.Models
         [Required(ErrorMessage = "Campo obrigatório")]
         [StringLength(50, ErrorMessage = "Use menos caracteres")]
         [EmailAddress(ErrorMessage = "Email Inválido")]
-        //[Remote("UsuarioExiste", "Usuarios")]
+        [Remote("UsuarioExiste", "Usuarios")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
