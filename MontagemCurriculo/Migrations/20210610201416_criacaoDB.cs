@@ -13,7 +13,7 @@ namespace MontagemCurriculo.Migrations
                 {
                     TipoCursoId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Tipo = table.Column<int>(nullable: false)
+                    Tipo = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

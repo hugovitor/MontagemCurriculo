@@ -177,7 +177,8 @@ namespace MontagemCurriculo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Tipo");
+                    b.Property<string>("Tipo")
+                        .IsRequired();
 
                     b.HasKey("TipoCursoId");
 
