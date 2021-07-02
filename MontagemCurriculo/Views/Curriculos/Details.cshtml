@@ -18,6 +18,13 @@
         </li>
         @await Component.InvokeAsync("FormacoesAcademicas", Model.CurriculoId)
     </ul>
+
+    <ul class="collection with-header">
+        <li class="collection-header">
+            Experiências Profissionais <a asp-action="Create" asp-controller="ExperienciasProfissionais" asp-route-id="@Model.CurriculoId" class="btn-floating btn-small blue darken-4"><i class="material-icons">add</i></a>
+        </li>
+        @await Component.InvokeAsync("ExperienciasProfissionais", Model.CurriculoId)
+    </ul>
 </div>
 
 <!-- Modal Structure -->
